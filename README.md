@@ -38,7 +38,7 @@ If we want to sort the results based on the aggregate, make sure to refer the en
 
 ## SELECT columns in same order as we GROUP BY.  
 
-### Examples  
+### Examples  = Suppose we have this table 
 
 ![Payment table](Payment%20table.png)  
 
