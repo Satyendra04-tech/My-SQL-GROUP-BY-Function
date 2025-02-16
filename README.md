@@ -71,4 +71,5 @@ GROUP BY DATE(payment_date)
 ORDER BY SUM(amount) DESC ;
 ```
 This code will first convert date and time to date only and then sum the amount spent on each date and will show the amount spent on each date in descending order.  
-4. We have 2 staff members, with staff id 1 and 2. We want to give a bonus to the staff member that handeled the most payments in terms   
+
+4. We have 2 staff members, with staff id 1 and 2. We want to give a bonus to the staff member that handeled the most payments in terms of payments processed.
