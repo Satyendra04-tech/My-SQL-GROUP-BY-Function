@@ -70,4 +70,6 @@ SELECT DATE(payment_date), SUM(amount) FROM Payment
 GROUP BY DATE(payment_date)
 ORDER BY SUM(amount) DESC ;
 ```
-This code will first convert date and time to date only and then sum the amount spent on each date and will show the amount spent on each date in descending order. 
+This code will first convert date and time to date only and then sum the amount spent on each date and will show the amount spent on each date in descending order.  
+
+4. 
