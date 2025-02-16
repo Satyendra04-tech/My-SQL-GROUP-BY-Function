@@ -63,7 +63,7 @@ GROUP BY customer_id, staff_id
 ORDER BY customer_id ;  
 ```   
 
-## For date and timestamp, first we have to extract the date and timestamp to date only. To do this we can use DATE function.  
+* For date and timestamp, first we have to extract the date and timestamp to date only. To do this we can use DATE function.  
 
 ```
 SELECT DATE(payment_date), SUM(amount) FROM Payment
