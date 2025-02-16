@@ -38,7 +38,36 @@ If we want to sort the results based on the aggregate, make sure to refer the en
 
 ## SELECT columns in same order as we GROUP BY.  
 
-### Examples  = Suppose we have this table 
+### Examples  = Suppose we have this table knows as Payment
 
 ![Payment table](Payment%20table.png)  
 
+1. What customer_id is spending the most amount of money?  
+```
+SELECT customer_id, SUM(amount) FROM Payment
+GROUP BY customer_id
+ORDER BY SUM(amount) DESC ; 
+```  
+
+2. Count the number of transcations per customer id is having and check which customer id is having maximum number of transcation.
+```
+SELECT customer_id, COUNT(amount) FROM Payment
+GROUP BY customer_id
+ORDER BY COUNT(amount) DESC ; 
+```  
+
+3. How much customer spent with each staff?
+```
+SELECT customer_id, staff_id, SUM(amount) FROM payment
+GROUP BY customer_id, staff_id
+ORDER BY customer_id ;  
+```   
+
+## For date and timestamp, first we have to extract the date and timestamp to date only. To do this we can use DATE function.  
+
+```
+SELECT DATE(payment_date), SUM(amount) FROM Payment
+GROUP BY DATE(payment_date)
+ORDER BY SUM(amount) DESC ;
+```
+This code will first convert date and time to date only and then sum the amount spent on each date and will show the amount spent on each date in descending order. 
