@@ -72,9 +72,25 @@ ORDER BY SUM(amount) DESC ;
 ```
 This code will first convert date and time to date only and then sum the amount spent on each date and will show the amount spent on each date in descending order.  
 
-4. We have 2 staff members, with staff id 1 and 2. We want to give a bonus to the staff member that handeled the most payments in terms of payments processed. How many payments did each staff member handeled and who get the bonus.  
+4. We have 2 staff members, with staff id 1 and 2. We want to give a bonus to the staff member that handeled the most payments in terms of payments processed. How many payments did each staff member handeled and who get the bonus?  
 ```
 SELECT staff_id, COUNT(amount) FROM Payment
 GROUP BY staff_id
 ORDER BY COUNT(amount);
+```   
+ 
+5. We are running a promotion to reward out top 5 customers with coupns. What are the customer_id of the top 5 customers by total spend?
 ```
+SELECT customer_id, SUM(amount) FROM Payment
+GROUP BY customer_id
+ORDER BY SUM(amount) DESC
+LIMIT 5;
+```   
+
+6. Corporate HQ is conducting a study on the relationship between replacement_cost and a movie MPAA rating. What is average replacement_cost per MPA rating? Use the below mentioned table for your reference.
+![Film Table](Film%20Table.png)
+```
+SELECT rating, ROUND(AVG(replacement_cost), 2) FROM film
+GROUP BY rating
+ORDER BY ROUND(AVG(replacement_cost), 2);
+``` 
